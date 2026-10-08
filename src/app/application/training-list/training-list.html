@@ -1,0 +1,23 @@
+<h1>Liste des informations sans composants enfants</h1>
+<button type="button" (click)="addTraining()">Ajouter</button>
+<ul>
+  @for (train of trainingCatalog(); track train.id) {
+    <li>
+      Nom : {{ train.name }} - Nb jours : {{ train.nbDays }}
+      <input type="checkbox" [checked]="train.isFree" disabled />
+      Gratuit
+    </li>
+  }
+</ul>
+
+<h1>Liste des informations avec composants enfants</h1>
+<ul>
+  @for (train of trainingCatalog(); track train.id) {
+    <li>
+      <app-training-item [training]="train" [position]="$index + 1"></app-training-item>
+    </li>
+  }
+</ul>
+
+<h2>Catalogue JSON</h2>
+<pre>{{ trainingCatalogJson() }}</pre>
