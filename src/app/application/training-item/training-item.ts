@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Training } from '../training';
 
 @Component({
@@ -10,4 +10,8 @@ import { Training } from '../training';
 export class TrainingItem {
   training = input.required<Training>();
   position = input.required<number>({ alias: 'position' });
+  supprimeTraining = output<number>();
+  onsupprime(){
+    this.supprimeTraining.emit(this.training().id);
+  }
 }

@@ -1,5 +1,5 @@
 <h1>Liste des informations sans composants enfants</h1>
-<button type="button" (click)="addTraining()">Ajouter</button>
+
 <ul>
   @for (train of trainingCatalog(); track train.id) {
     <li>
@@ -14,10 +14,10 @@
 <ul>
   @for (train of trainingCatalog(); track train.id) {
     <li>
-      <app-training-item [training]="train" [position]="$index + 1"></app-training-item>
+      <app-training-item [training]="train" [position]="$index + 1" (supprimeTraining)="OnRemoveTraining($event)"></app-training-item>
     </li>
   }
 </ul>
-
+<button type="button" (click)="addTraining()">Ajouter</button>
 <h2>Catalogue JSON</h2>
-<pre>{{ trainingCatalogJson() }}</pre>
+{{ trainingCatalog() | json }}
