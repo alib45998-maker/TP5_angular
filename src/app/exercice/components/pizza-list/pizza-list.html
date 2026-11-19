@@ -1,0 +1,20 @@
+<main>
+  <header>
+    <h1 >La carte des pizzas</h1>
+    <p >Découvrez nos pizzas et les avis de nos clients.</p>
+  </header>
+
+  <ul >
+    @for (pizza of pizzasList(); track $index) {
+      <li >
+        <app-pizza-item
+          [pizza]="pizza"
+          (deletePizza)="removePizza($event)"
+          
+        />
+      </li>
+    } @empty {
+      <li >Aucune pizza au menu.</li>
+    }
+  </ul>
+</main>

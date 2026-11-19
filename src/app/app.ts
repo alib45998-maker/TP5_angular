@@ -1,9 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { TrainingList } from './application/training-list/training-list';
+import { PizzaList } from './exercice/components/pizza-list/pizza-list';
 
 @Component({
   selector: 'app-root',
-  imports: [TrainingList],
+  imports: [PizzaList],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

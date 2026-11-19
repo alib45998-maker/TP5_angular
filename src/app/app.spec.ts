@@ -14,13 +14,13 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render the training list', async () => {
+  it('should render the pizza list', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
 
-    expect(compiled.querySelector('app-training-list')).not.toBeNull();
-    expect(compiled.textContent).toContain('Liste des informations');
-    expect(compiled.textContent).toContain('Introduction à Angular');
+    expect(compiled.querySelector('app-pizza-list')).not.toBeNull();
+    expect(compiled.textContent).toContain('La carte des pizzas');
+    expect(compiled.textContent).toContain('Neptune');
   });
 });
